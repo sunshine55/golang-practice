@@ -5,7 +5,7 @@
       "type": "go",
       "request": "launch",
       "mode": "debug",
-      "program": "${workspaceFolder}/cmd/ytdl",
+      "program": "${workspaceFolder}",
       "console": "integratedTerminal"
     }
   ]

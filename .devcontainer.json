@@ -1,9 +1,9 @@
 {
-  "name": "audio-composer",
+  "name": "go-cli",
   "dockerComposeFile": [
     "./compose.yml"
   ],
-  "service": "audio-composer",
+  "service": "go-cli",
   "shutdownAction": "none",
   "customizations": {
     "vscode": {
