@@ -1,0 +1,8 @@
+{
+  "editor.defaultFormatter": "golang.go",
+  "editor.formatOnSave": true,
+  "remote.autoForwardPorts": false,
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "audio-composer",
+  "dockerComposeFile": [
+    "./compose.yml"
+  ],
+  "service": "audio-composer",
+  "shutdownAction": "none",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "golang.Go"
+      ]
+    }
+  },
+  "workspaceFolder": "/workspace"
+}

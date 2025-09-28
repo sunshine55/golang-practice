@@ -1,0 +1,7 @@
+services:
+  audio-composer:
+    image: golang:1.25-bookworm
+    container_name: audio-composer
+    volumes:
+      - ./:/workspace:delegated
+    command: tail -f /dev/null
