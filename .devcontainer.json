@@ -1,9 +1,9 @@
 {
-  "name": "go-cli",
+  "name": "go-machine",
   "dockerComposeFile": [
     "./compose.yml"
   ],
-  "service": "go-cli",
+  "service": "go-machine",
   "shutdownAction": "none",
   "customizations": {
     "vscode": {

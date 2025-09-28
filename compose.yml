@@ -1,7 +1,7 @@
 services:
-  go-cli:
+  go-machine:
     image: golang:1.25-bookworm
-    container_name: go-cli
+    container_name: go-machine
     volumes:
       - ./:/workspace:delegated
     command: tail -f /dev/null

@@ -12,10 +12,10 @@ The `master` branch contains minimal setup to start developing Go app in remote 
 
 Create folder and fetch only one branch into the folder with the same name:
 ```bash
-# For example, in order to enhance 'feature/wma2mp3'
+# For example, in order to enhance 'feature/go-cli'
 mkdir go-cli && cd go-cli
 git init
-git remote add origin https://github.com/sunshine55/python-practice.git
+git remote add origin https://github.com/sunshine55/golang-practice.git
 git fetch feature/go-cli
 git checkout feature/go-cli
 ```
