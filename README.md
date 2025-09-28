@@ -4,9 +4,9 @@ Collection of Go programming exercises and use cases
 
 ## Forewords
 
-Each feature branch is a use case or collection of exercises about leveraging Go to do some tasks. The `master` branch contains minimal setup to develop Go in remote container using VSCode.
+Each feature branch is a use case or collection of exercises about leveraging Go to do some tasks. They're not related to each other.
 
-Each feature is a distinguish use case and not related to each other.
+The `master` branch contains minimal setup to start developing Go app in remote container using VSCode.
 
 ## Usage
 
