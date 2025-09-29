@@ -6,6 +6,16 @@ This is checked out from master branch and adjust the name of the container name
 
 Implement a Dockerfile that will provision the container (i.e.: OS-level media processing libs, guest/host permissions...)
 
+First time: `docker compose -d --build`
+
+Next time: `docker compose start`
+
+## Rebuild
+
+Destroy old service: `docker compose down --remove-orphans`
+
+Rebuild when Dockerfile changes: `docker compose up -d --build`
+
 ## Requirements
 
 Implment a few CLI programs in Go language
