@@ -31,10 +31,17 @@ Processing for each URL:
 1. Download the video
 2. Separate audio from video
 
-Output:
-1. Store the audios at local folder
-2. Upload the audios to personal cloud
+Output: store the audios at local folder
 
-### Image Generator
+### Personal Cloud Uploader
 
-***Work In Progress...***
+Input:
+1. Ask for the directory or file input
+2. Ask for personal cloud credentials
+
+Processing:
+1. Check availability of the file(s) from first input
+2. Programmatically log in to personal cloud
+3. Upload the files to to the cloud
+
+Output: clean up the files at local folder if success
