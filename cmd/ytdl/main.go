@@ -22,27 +22,31 @@ func main() {
 	defer file.Close()
 
 	scanner := bufio.NewScanner(file)
-	var urls []string
+	var lines []string
 	for scanner.Scan() {
 		line := strings.TrimSpace(scanner.Text())
-		if strings.HasPrefix(line, "https://www.youtube.com/") || strings.HasPrefix(line, "https://youtu.be/") {
-			urls = append(urls, line)
+		if strings.Contains(line, "https://www.youtube.com/") || strings.Contains(line, "https://youtu.be/") {
+			lines = append(lines, line)
 		}
 	}
 
-	if len(urls) == 0 {
+	if len(lines) == 0 {
 		fmt.Println("No YouTube URLs found in the file.")
 		return
 	}
 
-	downloadDir := filepath.Join("../../assets", "output")
-	for _, url := range urls {
-		fmt.Println("Processing:", url)
-		parts := strings.SplitN(url, "@", 2)
-		source := parts[0]
-		title := parts[1] + ".mp3"
-		// Download video and extract audio using yt-dlp
-		cmd := exec.Command("yt-dlp", "-x", "--audio-format", "mp3", "-o", filepath.Join(downloadDir, title), source)
+	downloadDir := filepath.Join(filepath.Dir(filePath), "output")
+	if err := os.MkdirAll(downloadDir, 0777); err != nil {
+		fmt.Println("Error creating output directory:", err)
+		return
+	}
+
+	for _, line := range lines {
+		fmt.Println("Processing:", line)
+		parts := strings.SplitN(line, "@", 2)
+		title := parts[0] + ".mp3"
+		url := parts[1]
+		cmd := exec.Command("yt-dlp", "-x", "--audio-format", "mp3", "-o", filepath.Join(downloadDir, title), url)
 		cmd.Stdout = os.Stdout
 		cmd.Stderr = os.Stderr
 		if err := cmd.Run(); err != nil {
@@ -50,5 +54,5 @@ func main() {
 		}
 	}
 
-	fmt.Println("All audio files saved to", downloadDir)
+	fmt.Println("Audio files are extracted to", downloadDir)
 }

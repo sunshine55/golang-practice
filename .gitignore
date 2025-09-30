@@ -1,2 +1,2 @@
-assets/output/*.mp3
-assets/*.txt
+localresource/*
+!localresource/.gitkeep
