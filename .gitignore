@@ -1,2 +1,4 @@
+bin/*
+!bin/README.md
 localresource/*
-!localresource/.gitkeep
+!localresource/README.md
