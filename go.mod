@@ -1,4 +1,4 @@
-module collection
+module github.com/sunshine55/golang-practice/go-cli/ytdl
 
 go 1.25.1
 

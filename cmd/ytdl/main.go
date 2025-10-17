@@ -1,9 +1,3 @@
-// To run this package (include all files in the directory):
-//   cd /workspace/cmd/ytdl
-//   go run .
-// or
-//   go run *.go
-
 package main
 
 import (
@@ -11,6 +5,8 @@ import (
 	"log"
 
 	"google.golang.org/api/drive/v3"
+
+	"github.com/sunshine55/golang-practice/go-cli/ytdl/internal/app"
 )
 
 func executeUpload(srv *drive.Service) {
@@ -30,20 +26,20 @@ func executeUpload(srv *drive.Service) {
 }
 
 func main() {
-	input := AskInput()
+	input := app.AskInput()
 
-	Parse(input)
+	app.Parse(input)
 
 	var srv *drive.Service
-	switch input.authMethod {
+	switch input.AuthMethod {
 	case "1":
-		srv = InitServiceAccount()
-		fmt.Println("Google Drive service initialized with Service Account:")
+		srv = app.InitServiceAccount()
+		fmt.Println("Google Drive service initialized with Service Account")
 	case "2":
-		srv = InitClientID()
-		fmt.Println("Google Drive service initialized with Client ID:")
+		fmt.Println("Google Drive service initialized with Client ID (work in progress)")
+		return
 	default:
-		fmt.Println("Invalid authentication method selected.")
+		fmt.Println("Invalid authentication method selected")
 		return
 	}
 

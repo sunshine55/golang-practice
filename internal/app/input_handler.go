@@ -1,12 +1,12 @@
-package main
+package app
 
 import (
 	"fmt"
 )
 
 type Input struct {
-	playlist   string
-	authMethod string
+	PlayList   string
+	AuthMethod string
 }
 
 func AskInput() Input {
@@ -14,12 +14,12 @@ func AskInput() Input {
 	var playlist string
 	fmt.Scanln(&playlist)
 
-	fmt.Print("Select authentication method\n1. service_account\n2. client_id\n>")
+	fmt.Print("Select authentication method\n1. service_account\n2. client_id\n> ")
 	var authMethod string
 	fmt.Scanln(&authMethod)
 
 	return Input{
-		playlist:   playlist,
-		authMethod: authMethod,
+		PlayList:   playlist,
+		AuthMethod: authMethod,
 	}
 }

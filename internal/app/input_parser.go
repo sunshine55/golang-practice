@@ -1,4 +1,4 @@
-package main
+package app
 
 import (
 	"bufio"
@@ -10,7 +10,7 @@ import (
 )
 
 func Parse(input Input) {
-	file, err := os.Open(input.playlist)
+	file, err := os.Open(input.PlayList)
 	if err != nil {
 		fmt.Println("Error opening file:", err)
 		return
@@ -31,7 +31,7 @@ func Parse(input Input) {
 		return
 	}
 
-	downloadDir := filepath.Join(filepath.Dir(input.playlist), "output")
+	downloadDir := filepath.Join(filepath.Dir(input.PlayList), "output")
 	if err := os.MkdirAll(downloadDir, 0777); err != nil {
 		fmt.Println("Error creating output directory:", err)
 		return
