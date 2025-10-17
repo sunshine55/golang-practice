@@ -2,7 +2,7 @@ bin/*
 !bin/README.md
 assets/*
 !assets/README.md
-credentials.json
+credentials/
 token.json
 *.mp3
 *.log
